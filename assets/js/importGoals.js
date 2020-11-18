@@ -1,15 +1,19 @@
-    
+    //her henter jeg data fra api'et. data'ene er alle billederne, samt deres data (men ikke deres detaljer)
     async function fetchGoals() {
         let response = await fetch('https://api.mediehuset.net/sdg/goals');
         let goals = await response.json();
 
+        //der bliver retuneret et array med alle objekterne
         return goals.items;
     };
 
+    //her henter jeg data fra api'et. data'ene er detaljerne fra alle billederne.
+    //men her henter jeg kun en ind af gangen, og dette bliver bestemt af viewet.
     async function detailsController(priority) {
         let response = await fetch(`https://api.mediehuset.net/sdg/goals/${priority}`)
         let detials = await response.json();
 
+        //her bliver retuneret et objekt som er detaljerne af det valgte verdensmål
         return detials.item;
     };
 
@@ -27,7 +31,7 @@
 
                     let overlay = document.createElement('article');
                     html.appendChild(overlay);
-                    overlay.innerHTML = `${element.title}`
+                    overlay.innerHTML = `${element.title} ${element.icon}`
             });
         };
 
@@ -84,29 +88,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // async function fetchGoalsDetails(index) {
-    //     let response = await fetch(`https://api.mediehuset.net/sdg/goals/${index}`);
-    //     let details = await response.json();
-
-    //     return details;
-    // };
-
-    // async function testView() {
-    //     let index_of_goals = [...await testController()];
-
-    //     console.log(index_of_goals);
-    // }
-    // testView();
