@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+  -ms-grid-columns: (1fr)[6];
+      grid-template: repeat(3, 1fr)/repeat(6, 1fr);
+}
+
+section {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  color: #dfdfdf;
+}
+
+section article {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #00000060;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}

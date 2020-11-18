@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(6, 1fr);
+}
+
+section {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    color: #dfdfdf;
+
+    article {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #00000060;
+
+        text-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.6);
+    }
+}
