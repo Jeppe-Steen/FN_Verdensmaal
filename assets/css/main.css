@@ -19,19 +19,34 @@ body {
   background-color: #333;
 }
 
-section {
-  cursor: pointer;
+.goalCard {
+  position: relative;
   height: 100%;
   width: 100%;
-  background-position: center;
-  background-size: cover;
   color: #dfdfdf;
   -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
           box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  cursor: pointer;
 }
 
-section article {
-  text-align: center;
+.goalCard .cardFront, .goalCard .cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,24 +56,46 @@ section article {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.goalCard .cardFront span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #dfdfdf;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
   height: 100%;
-  padding: 20px;
-  background-color: #00000060;
-  position: relative;
-  font-weight: 700;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  width: 100%;
 }
 
-section article svg {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  width: 20%;
-  height: 20%;
-  fill: #dfdfdf;
+.goalCard .cardBack {
+  padding: 10px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  font-size: 0.8em;
 }
 
-section article:hover {
-  background-color: transparent;
+.goalCard .cardBack span {
+  margin-top: 5px;
+}
+
+.goalCard:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }

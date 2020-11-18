@@ -23,22 +23,29 @@
 
         let createHtml = async () => {
             index_of_goals.forEach(element => {
-                let html = document.createElement('section');
-                document.body.appendChild(html);
-                html.setAttribute('class', 'btn');
-                html.setAttribute('data-priority', `${element.id}`);
-                html.style.backgroundImage = `url(/assets/media/${element.id}.jpeg)`;
+                let card = document.createElement('section');
+                document.body.appendChild(card);
+                card.setAttribute('class', 'goalCard');
+                card.setAttribute('data-priority', `${element.id}`);
 
-                    let overlay = document.createElement('article');
-                    html.appendChild(overlay);
-                    overlay.innerHTML = `${element.title} ${element.icon}`
+                    let cardFront = document.createElement('article');
+                    card.appendChild(cardFront);
+                    cardFront.setAttribute('class', 'cardFront');
+                    cardFront.style.backgroundImage = `url(/assets/media/${element.id}.jpeg)`;
+                    cardFront.innerHTML = `<span class="overlay">${element.title}</span>`;
+
+                    let cardBack = document.createElement('article');
+                    card.appendChild(cardBack);
+                    cardBack.setAttribute('class', 'cardBack');
+                    cardBack.style.backgroundColor = `#${element.color}`;
+                    cardBack.innerHTML = `${element.byline} <br /> <span>Click for at læse mere</span>`;
             });
         };
 
         let click_event = async () => {
-            let clickable_btns = document.querySelectorAll('.btn');
+            let clickable_cards = document.querySelectorAll('.goalCard');
 
-            clickable_btns.forEach(element => element.addEventListener('click', () => {
+            clickable_cards.forEach(element => element.addEventListener('click', () => {
                 open_event(element.getAttribute('data-priority'));
             }));
 
