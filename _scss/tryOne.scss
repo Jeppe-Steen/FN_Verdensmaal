@@ -35,6 +35,7 @@ body {
         background-position: center;
         background-size: cover;
         backface-visibility: hidden;
+        text-transform: uppercase;
 
         display: flex;
         align-items: center;
@@ -44,6 +45,8 @@ body {
     }
 
     .cardFront {
+        font-size: 1.2em;
+
         span {
             display: flex;
             align-items: center;
@@ -60,7 +63,7 @@ body {
     .cardBack {
         padding: 10px;
         transform: rotateY(180deg);
-        font-size: 0.8em;
+        font-size: 0.9em;
 
         span {
             margin-top: 5px;
