@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template: 100% / 15% auto;
+    grid-template-areas: 'nav main';
+    
+    nav {
+        background-color: #444;
+    }
+
+    main {
+        background-color: #666;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        #button_span {
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            width: fit-content;
+            height: fit-content;
+
+            button {
+                margin: 0 10px;
+                padding: 5px;
+                text-transform: uppercase;
+            }
+        }
+
+        #card_container {
+            width: fit-content;
+            height: 65%;
+            background-color: #555;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+
+            .card {
+                width: 16vw;
+                height: 70%;
+                margin: 25px;
+
+                //dette er for at den kan flippe
+                position: relative;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+                transition: transform 1s;
+
+                .cardFront, .cardBack {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    backface-visibility: hidden;
+                    color: #dfdfdf;
+            
+                    //dette er for at centrerer elementerne inden i disse klasser
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .cardFront {
+                    background-color: #333;
+                    position: relative;
+
+                    //for at tilpasse baggrundsbilledet
+                    background-position: center;
+                    background-size: cover;
+
+                    svg {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 20px;
+                        fill: #dfdfdf;
+                        height: 10%;
+                        z-index: 10;
+                        filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5));
+                    }
+
+                    h2 {
+                        width: 80%;
+                        z-index: 10;
+                        text-transform: uppercase;
+                        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+                    }
+
+                    .overlay {
+                        background-color: black;
+                        opacity: 0.4;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .cardBack {
+                    //dette er for at teksten ikke er spejlvendt
+                    transform: rotateY(180deg);
+
+                    p {
+                        width: 80%;
+                    }
+                }
+
+                &:hover {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+}
