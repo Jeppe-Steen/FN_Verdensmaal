@@ -13,11 +13,25 @@ body {
     grid-template-areas: 'nav main';
     
     nav {
-        background-color: #444;
+        background-color: rgb(223,174,75);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-size: 3em;
+            transform: rotate(-90deg);
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+            color:#dfdfdf;
+        }
     }
 
     main {
-        background-color: #666;
+        background: rgb(223,174,75);
+        background: linear-gradient(225deg, rgba(223,174,75,1) 0%, rgba(51,198,207,1) 100%);
         display: flex;
         align-items: center;
         overflow: hidden;
@@ -31,15 +45,26 @@ body {
 
             button {
                 margin: 0 10px;
-                padding: 5px;
+                padding: 15px;
                 text-transform: uppercase;
+                cursor: pointer;
+                border: none;
+                font-size: 1em;
+                font-weight: 900;
+                background-color: none;
+                background-color: rgb(223,174,75);
+                color: #dfdfdf;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
 
         #card_container {
             width: fit-content;
             height: 65%;
-            background-color: #555;
+            // background-color: #555;
             display: flex;
             align-items: center;
             padding: 20px;
@@ -48,6 +73,7 @@ body {
                 width: 16vw;
                 height: 70%;
                 margin: 25px;
+                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 
                 //dette er for at den kan flippe
                 position: relative;
@@ -116,6 +142,7 @@ body {
 
                 &.active {
                     transform: rotateY(180deg) scale(1.15);
+                    box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
                 }
             }
         }
@@ -129,6 +156,7 @@ body {
         top: 0;
         left: 0;
         backdrop-filter: blur(4px);
+        color: #dfdfdf;
 
         display: none;
         align-items: center;
@@ -138,6 +166,17 @@ body {
             width: 30%;
             height: 80%;
             overflow-y: scroll;
+
+            padding: 20px;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            p {
+                margin-bottom: 20px;
+            }
         }
     }
 }

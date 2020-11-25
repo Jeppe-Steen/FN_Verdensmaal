@@ -18,11 +18,31 @@ body {
 }
 
 body nav {
-  background-color: #444;
+  background-color: #dfae4b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body nav h1 {
+  font-size: 3em;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+  color: #dfdfdf;
 }
 
 body main {
-  background-color: #666;
+  background: #dfae4b;
+  background: linear-gradient(225deg, #dfae4b 0%, #33c6cf 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,8 +66,20 @@ body main #button_span {
 
 body main #button_span button {
   margin: 0 10px;
-  padding: 5px;
+  padding: 15px;
   text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  font-weight: 900;
+  background-color: none;
+  background-color: #dfae4b;
+  color: #dfdfdf;
+}
+
+body main #button_span button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 body main #card_container {
@@ -55,7 +87,6 @@ body main #card_container {
   width: -moz-fit-content;
   width: fit-content;
   height: 65%;
-  background-color: #555;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,6 +100,8 @@ body main #card_container .card {
   width: 16vw;
   height: 70%;
   margin: 25px;
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   position: relative;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -148,6 +181,8 @@ body main #card_container .card .cardBack p {
 body main #card_container .card.active {
   -webkit-transform: rotateY(180deg) scale(1.15);
           transform: rotateY(180deg) scale(1.15);
+  -webkit-box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 body #details_container {
@@ -159,6 +194,7 @@ body #details_container {
   left: 0;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
+  color: #dfdfdf;
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -172,4 +208,20 @@ body #details_container .card_details {
   width: 30%;
   height: 80%;
   overflow-y: scroll;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body #details_container .card_details p {
+  margin-bottom: 20px;
 }

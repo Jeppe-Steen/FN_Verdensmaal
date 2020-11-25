@@ -107,13 +107,12 @@ async function goalsView() {
 
                 card_details.innerHTML = 
                 `<p id="close_btn">luk</p>
-                <p>${id}. ${title}</p>
+                <header><h3>${id}. ${title}</h3></header>
                 <p>${description}</p>`;
 
                 for(let i = 0; i < targets.length; i++) {
                     card_details.innerHTML += 
-                    `<p>${targets[i].title}</p>
-                    <p>${targets[i].description}</p>`
+                    `<h4>${targets[i].title}</h4><p>${targets[i].description}</p>`
                 };
 
                 card_details.style.backgroundColor = `#${details.color}`;
