@@ -74,10 +74,8 @@ body main #card_container .card {
           perspective: 1000px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 body main #card_container .card .cardFront, body main #card_container .card .cardBack {
@@ -147,7 +145,31 @@ body main #card_container .card .cardBack p {
   width: 80%;
 }
 
-body main #card_container .card:hover {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+body main #card_container .card.active {
+  -webkit-transform: rotateY(180deg) scale(1.15);
+          transform: rotateY(180deg) scale(1.15);
+}
+
+body #details_container {
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #details_container .card_details {
+  width: 30%;
+  height: 80%;
+  overflow-y: scroll;
 }
