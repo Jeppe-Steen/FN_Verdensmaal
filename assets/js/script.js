@@ -98,9 +98,13 @@ async function goalsView() {
             get_details(active_card.getAttribute('data-priority'));
         });
 
-            //dette er så funktionen som henter datane fra controlleren som ligger i toppen af dokumentet
-            let get_details = async (priority) => {
-                let details = await detailsController(priority);
+        //dette er så funktionen som henter datane fra controlleren som ligger i toppen af dokumentet
+        let get_details = async (priority) => {
+            let details = await detailsController(priority);
+
+            //her tester vi om det data som kommer fra api'et er et objekt, og hvis det er det, 
+            //så kører den resten af funktionen, og hvis ikke det er det, så viser console logger den en fejl meddelelse.
+            if(isObject(details).result) {
                 let {id, title, byline, description, icon, targets} = details;
 
                 details_container.style.display = 'flex';
@@ -122,7 +126,10 @@ async function goalsView() {
                 close_btn.addEventListener('click', () => {
                     details_container.style.display = 'none';
                 });
+            } else {
+                console.log(isObject(details).message);
             };
+        };
     };
 
     carusel_function();
