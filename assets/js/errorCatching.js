@@ -121,10 +121,3 @@ function isUrl_forMoreObject(subject) {
         }
     }
 };
-
-
-let more_urls = ['http://www.google.dk', 'https://www.google.dk', 'www.google.dk' ];
-let url = 'https://www.google';
-isUrl_forOneObject(url);
-isUrl_forMoreObject(more_urls);
-
