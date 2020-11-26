@@ -90,14 +90,11 @@ async function goalsView() {
     read_function();
 }
 ```
-### Rest parameter
-I opgaven bruger jeg rest parameterne til at ligge elementer ind i et array.
+### Rest parameter & Spread operator
+I opgaven bruger jeg ikke rest parameter, men tilgengæld bruger jeg spread operatorer til at smide elementer ind i et array.
+
 ```javascript
 let index_of_goals = [...await fetchGoals()];
-```
-### Spread operator
-I opgaven bruger jeg dem desværre ikke, kunne ikke finde et tidspunkt hvor jeg tænkte at det ville passe godt ind.
-```javascript
 ```
 ### Destructuring Assignment
 Destructuring Assignment bruger jeg en gang i opgaven og det er i funktionen get_details();
