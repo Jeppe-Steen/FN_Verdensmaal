@@ -13,9 +13,9 @@ Opgavens javascript er opbygget efter mvc (model, view, controller) strukturen.
 Den er opbygget ved at vi har vores model, som er det api hvor vi henter vores data.
 
 Der er så derefter lavet to controllers.
-    - Den første fungerer ved at hente data ind fra api'et omkring alle    verdensmålene.
+1. Den første fungerer ved at hente data ind fra api'et omkring alle    verdensmålene.
 
-    - Den anden controller fungerer så ved at vi også henter data ind fra api'et, men denne gang er det kun de specifikke detaljer fra et enkelt verdensmål.
+2. Den anden controller fungerer så ved at vi også henter data ind fra api'et, men denne gang er det kun de specifikke detaljer fra et enkelt verdensmål.
 
 Dette kommer til at se sådan her ud:
 ```javascript
@@ -48,12 +48,12 @@ async function goalsView() {
 
 ## Programmerings metoder (som skulle indgå)
 I opgaven blev det oplagt at skulle bruge nogle bestemte programmerings metoder.
-    1. Arrow functions
-    2. Closures
-    3. Rest parameter
-    4. Spread operator
-    5. Destructuring Assignment
-    6. Error catching
+1. Arrow functions
+2. Closures
+3. Rest parameter
+4. Spread operator
+5. Destructuring Assignment
+6. Error catching
 
 Her vil jeg vise i hvilke tilfælde jeg har brugt disse metoder.
 
