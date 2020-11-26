@@ -55,8 +55,6 @@ I opgaven blev det oplagt at skulle bruge nogle bestemte programmerings metoder.
 5. Destructuring Assignment
 6. Error catching
 
-Her vil jeg vise i hvilke tilfælde jeg har brugt disse metoder.
-
 ### Arrow functions
 Arrow functions er blevet brugt en del i opgaven, men her er et eksempel.
 ```javascript
@@ -102,7 +100,7 @@ I opgaven bruger jeg dem desværre ikke, kunne ikke finde et tidspunkt hvor jeg 
 ```javascript
 ```
 ### Destructuring Assignment
-Destructuring Assignment bruger jeg en gang i opgavem og det er i funktionen get_details();
+Destructuring Assignment bruger jeg en gang i opgaven og det er i funktionen get_details();
 ```javascript
 let {id, title, byline, description, icon, targets} = details;
 ```
