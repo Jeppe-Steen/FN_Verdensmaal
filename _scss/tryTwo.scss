@@ -8,72 +8,58 @@
 body {
     height: 100vh;
     width: 100%;
+
     display: grid;
-    grid-template: 100% / 15% auto;
-    grid-template-areas: 'nav main';
-    
-    nav {
-        background-color: rgb(223,174,75);
+    grid-template: 80% auto / 100%;
+    grid-template-areas: 
+    'mainSec' 
+    'navSec';
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        h1 {
-            font-size: 3em;
-            transform: rotate(-90deg);
-            text-transform: uppercase;
-            text-align: center;
-            text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-            color:#dfdfdf;
-        }
+    @media (min-width: 1200px) {
+        grid-template: 100% / 15% auto;
+        grid-template-areas: 'navSec mainSec';
     }
 
+    
     main {
-        background: rgb(223,174,75);
-        background: linear-gradient(225deg, rgba(223,174,75,1) 0%, rgba(51,198,207,1) 100%);
-        display: flex;
-        align-items: center;
+        grid-area: mainSec;
+        background: rgb(214,193,66);
+        background: linear-gradient(0deg, rgba(214,193,66,1) 0%, rgba(0,255,248,1) 100%);
+
+        @media (min-width: 1200px) {
+            background: rgb(214,193,66);
+            background: linear-gradient(90deg, rgba(214,193,66,1) 0%, rgba(0,255,248,1) 100%);
+        }
+
         overflow: hidden;
 
-        #button_span {
-            position: fixed;
-            bottom: 10%;
-            left: 50%;
-            width: fit-content;
-            height: fit-content;
+        display: flex;
+        align-items: center;
 
-            button {
-                margin: 0 10px;
-                padding: 15px;
-                text-transform: uppercase;
-                cursor: pointer;
-                border: none;
-                font-size: 1em;
-                font-weight: 900;
-                background-color: none;
-                background-color: rgb(223,174,75);
-                color: #dfdfdf;
-
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
+        position: relative;
 
         #card_container {
             width: fit-content;
-            height: 65%;
+            height: 70%;
             // background-color: #555;
             display: flex;
             align-items: center;
             padding: 20px;
 
+            @media (min-width: 1200px) {
+                height: 65%;
+            }
+
             .card {
-                width: 16vw;
-                height: 70%;
+                width: 50vw;
+                height: 65%;
                 margin: 25px;
                 box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+
+                @media (min-width: 1200px) {
+                    height: 70%;
+                    width: 16vw;
+                }
 
                 //dette er for at den kan flippe
                 position: relative;
@@ -89,6 +75,7 @@ body {
                     height: 100%;
                     backface-visibility: hidden;
                     color: #dfdfdf;
+                    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
             
                     //dette er for at centrerer elementerne inden i disse klasser
                     display: flex;
@@ -113,7 +100,7 @@ body {
                         fill: #dfdfdf;
                         height: 10%;
                         z-index: 10;
-                        filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5));
+                        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
                     }
 
                     h2 {
@@ -121,6 +108,7 @@ body {
                         z-index: 10;
                         text-transform: uppercase;
                         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+                        font-size: 1em;
                     }
 
                     .overlay {
@@ -146,7 +134,57 @@ body {
                 }
             }
         }
+
+        #btn_section {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media (min-width: 1200px) {
+                bottom: 10%;
+            }
+
+            button {
+                padding: 5px 8px;
+                margin: 0 5px;
+                text-transform: uppercase;
+                background-color: rgba(0, 0, 0, 0.15);
+                // border: 1px solid black;
+                border: none;
+                color: #dfdfdf;
+                font-size: 1em;
+
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
     }
+
+    nav {
+        grid-area: navSec;
+        background-color:  rgb(214,193,66);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        color: #dfdfdf;
+
+        h1 {
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+            @media (min-width: 1200px) {
+                transform: rotate(-90deg);
+                text-align: center;
+                font-size: 2em;
+            }
+        }
+    }
+}
 
     #details_container {
         width: 100%;
@@ -163,8 +201,12 @@ body {
         justify-content: center;
 
         .card_details {
-            width: 30%;
+            width: 80%;
             height: 80%;
+            @media (min-width: 1200px) {
+                width: 35%;
+            }
+
             overflow-y: scroll;
 
             padding: 20px;
@@ -173,10 +215,26 @@ body {
             align-items: center;
             flex-direction: column;
             text-align: center;
+            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+
 
             p {
                 margin-bottom: 20px;
             }
+
+            #close_btn {
+                position: absolute;
+                top: 3%;
+                right: 10%;
+                font-size: 1.5em;
+                cursor: pointer;
+                text-transform: uppercase;
+                color: black;
+
+                @media (min-width: 1200px) {
+                    right: 25%;
+                }
+            }
         }
     }
-}
