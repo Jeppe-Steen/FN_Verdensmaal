@@ -6,14 +6,16 @@ For at løse denne opgave, har jeg valgt at lave den som en simpel card carusel,
 > det skal dog lige nævnes, at der en en lille bug, hvor man skal trykke 2 gange på 'næste' første gang man vil til det næste card.
 
 Det første card i rækken, vil altid være det aktive card, som betyder at det er det som man kigger på. Det vil sige at hvis man trykker på 'læs mere'
-så er det detaljerne fra det card som man vil så.
+så er det detaljerne fra det card som man vil se.
 
 ## MVC struktur
 Opgavens javascript er opbygget efter mvc (model, view, controller) strukturen.
 Den er opbygget ved at vi har vores model, som er det api hvor vi henter vores data.
 
-Der er så derefter lavet to controllers, den første fungerer ved at hente data ind fra api'et omkring alle verdensmålene.
-Den anden controller fungerer så ved at vi også henter data ind fra api'et, men denne gang er det kun de specifikke detaljer fra et enkelt verdensmål.
+Der er så derefter lavet to controllers.
+    - Den første fungerer ved at hente data ind fra api'et omkring alle    verdensmålene.
+
+    - Den anden controller fungerer så ved at vi også henter data ind fra api'et, men denne gang er det kun de specifikke detaljer fra et enkelt verdensmål.
 
 Dette kommer til at se sådan her ud:
 ```javascript
