@@ -102,8 +102,9 @@ Destructuring Assignment bruger jeg en gang i opgaven og det er i funktionen get
 let {id, title, byline, description, icon, targets} = details;
 ```
 ### Error catching
-For at vise en error catching, har jeg valgt at bruge dette på get_details(); funktionen. her tester jeg om de details jeg får fra api'et ankommer som et object, og hvis de gør så kører den videre. 
-Men elementet ikke er et objekt, så console logger den et error message. 
+For at vise en error catching, har jeg valgt at bruge dette på get_details(); funktionen. 
+Her tester jeg, om de details jeg får fra api'et ankommer som et object, og hvis de gør det så kører den videre i funktionen. 
+Men hvis ikke elementet er et objekt, så console logger den en error message. 
 ```javascript
 let get_details = async (priority) => {
             let details = await detailsController(priority);
